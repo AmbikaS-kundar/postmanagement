@@ -1,0 +1,296 @@
+/* src/index.css - FINAL INSTAGRAM-STYLE DESIGN */
+
+/* --- 1. COLORS AND FONTS --- */
+:root {
+    /* High contrast, modern palette */
+    --primary-color: #0095F6; /* Instagram/Meta Blue */
+    --secondary-color: #2CD555; /* A vibrant Green for success */
+    --text-dark: #262626; /* Dark gray for text */
+    --border-light: #DBDBDB; /* Very light border color */
+    --background-light: #FAFAFA; /* Off-white background */
+    --background-white: #FFFFFF;
+}
+
+/* Ensure the Inter font is imported for a clean, modern look */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-light); 
+    min-height: 100vh; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--text-dark);
+}
+
+.app-main-wrapper {
+    max-width: 1000px;
+    margin: 0 auto; 
+    padding: 20px 20px 40px 20px;
+}
+
+/* --- 2. DASHBOARD/WELCOME PAGE --- */
+
+.welcome-container {
+    background-color: var(--background-white);
+    border-radius: 12px;
+    padding: 60px 40px;
+    margin-top: 50px;
+    /* Clean, defined shadow like a floating card */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    border: 1px solid var(--border-light);
+    text-align: center;
+}
+
+.welcome-heading {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+}
+
+.welcome-text {
+    font-size: 1.1rem;
+    color: #8E8E8E; /* Subtle secondary text color */
+    margin-bottom: 40px;
+}
+
+/* Dashboard Tabs (Unified Styling) */
+.dashboard-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.action-tab {
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.action-tab:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.view-tab {
+    background-color: var(--primary-color);
+    color: var(--background-white);
+}
+
+.create-tab {
+    background-color: var(--secondary-color);
+    color: var(--background-white);
+}
+
+/* --- 3. POST LIST HEADER & NAVIGATION --- */
+
+.main-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background-white); /* White bar */
+    padding: 15px 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Back Button (Made Attractive) */
+.back-button {
+    background-color: transparent; /* Transparent on white bar */
+    color: var(--primary-color); 
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.back-button:hover {
+    background-color: #F0F8FF; /* Subtle light blue hover */
+    box-shadow: none; 
+    transform: none;
+}
+
+/* Create New Post Button (in Header) */
+.header-action-button {
+    background-color: var(--primary-color);
+    color: var(--background-white);
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.header-action-button:hover {
+    background-color: #0076D4;
+}
+
+/* --- 4. FORM MODAL (CREATE/EDIT) --- */
+
+.form-modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.form-modal-content {
+    width: 90%;
+    max-width: 600px;
+    background-color: var(--background-white); 
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    padding: 30px;
+    border: 1px solid var(--border-light);
+}
+
+.title {
+    color: var(--text-dark);
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+/* Attractive Input Styling */
+input[type="text"],
+textarea {
+    font-family: inherit;
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-light); 
+    border-radius: 4px;
+    background-color: var(--background-light); 
+    font-size: 0.95rem; 
+    color: var(--text-dark);
+}
+
+input:focus, textarea:focus {
+    border-color: var(--primary-color); 
+    box-shadow: 0 0 0 2px rgba(0, 149, 246, 0.2); 
+    background-color: var(--background-white);
+}
+
+/* Form Buttons (Tab Styling) */
+.tab-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s;
+}
+
+.save-button {
+    background-color: var(--primary-color);
+    color: var(--background-white);
+}
+.save-button:hover { background-color: #0076D4; }
+
+.cancel-button {
+    background-color: #8E8E8E; /* Gray */
+    color: var(--background-white);
+}
+.cancel-button:hover { background-color: #7A7A7A; }
+
+/* --- 5. POST LIST VIEW --- */
+
+.posts-display-area {
+    background-color: var(--background-white); 
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.list-heading {
+    color: var(--text-dark);
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-light);
+    margin-bottom: 20px;
+}
+
+/* --- 6. POST CARDS (POSTER FORMAT) --- */
+.post-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.post-card {
+    /* Color is set inline via JSX */
+    border: 1px solid var(--border-light); 
+    border-left: 5px solid var(--primary-color); 
+    border-radius: 8px;
+    padding: 15px; 
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+    transition: transform 0.2s;
+}
+
+.post-card:hover { 
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.card-title { 
+    font-size: 1.15rem; 
+    font-weight: 600;
+    color: var(--text-dark); 
+    margin-bottom: 5px; 
+}
+
+.card-author { 
+    font-size: 0.85rem; 
+    color: #8E8E8E; 
+    margin-bottom: 10px; 
+}
+
+.card-content { 
+    font-size: 0.95rem; 
+    line-height: 1.4; 
+    margin-bottom: 10px; 
+}
+
+.tag-pill {
+    background-color: #E6F7FF; /* Very light blue background for tag */
+    color: var(--primary-color);
+    font-size: 0.7rem; 
+    padding: 3px 8px; 
+    border-radius: 12px; 
+    font-weight: 500;
+}
+
+/* Card Actions (Edit/Delete Buttons) */
+.action-button {
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.edit-button { background-color: #FFD700; color: var(--text-dark); }
+.edit-button:hover { background-color: #E0C000; }
+
+.delete-button { background-color: #FF385C; color: var(--background-white); }
+.delete-button:hover { background-color: #E03050; }
